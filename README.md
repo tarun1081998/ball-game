@@ -1,3 +1,7 @@
+# Link to Project preview
+
+https://ball-game-vz0z.onrender.com/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
