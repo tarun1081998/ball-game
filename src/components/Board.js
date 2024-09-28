@@ -69,7 +69,7 @@ const Board = (props) => {
                 else if (direction === 4) nextRow += 1;
 
                 if (nextCol < 0 || nextCol >= n || nextRow < 0 || nextRow >= n) {
-                    alert('Ball hit the wall! Your total score' + score+1);
+                    alert('Ball hit the wall! Your total score' + (score+1));
                     resetGame();
                     return prev;
                 }
