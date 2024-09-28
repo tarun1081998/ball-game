@@ -99,10 +99,10 @@ const Board = () => {
             let row = [];
             for (let j = 0; j < n; j++) {
                 if (i === current[0] && j === current[1]) {
-                    row.push(<Cell key={i * j}><Ball color="blue"/></Cell>);
+                    row.push(<Cell key={i * j}><Ball color="#87CEEB"/></Cell>);
                 } 
                 else if(i===item[0] && j===item[1]){
-                    row.push(<Cell key={i * j}><Ball color="green"/></Cell>);
+                    row.push(<Cell key={i * j}><Ball color="#FFD700"/></Cell>);
                 }
                 else {
                     row.push(<Cell key={i * j}/>);
