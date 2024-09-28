@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import Cell from "./Cell";
 import Ball from "./Ball";
 
-const n = 20;
-
-const Board = (props) => {
+const Board = () => {
     const [list, setList] = useState([]);
     const [current, setCurrent] = useState([0, 0]);
     const [direction, setDirection] = useState(1);
@@ -42,6 +40,7 @@ const Board = (props) => {
                 break;
             case "Enter":
                 setIsStarted(true)
+                setScore(0)
                 break;
             default:
                 break;
@@ -52,7 +51,6 @@ const Board = (props) => {
         setCurrent([0, 0]);
         setDirection(1);
         setIsStarted(false)
-        setScore(0)
         setSpeed(200)
     };
 
@@ -69,9 +67,8 @@ const Board = (props) => {
                 else if (direction === 4) nextRow += 1;
 
                 if (nextCol < 0 || nextCol >= n || nextRow < 0 || nextRow >= n) {
-                    alert('Ball hit the wall! Your total score' + (score+1));
                     resetGame();
-                    return prev;
+                    return prev
                 }
 
                 return [nextRow, nextCol];
@@ -125,7 +122,7 @@ const Board = (props) => {
 
     return (
         <div className="wrapper">
-            {!isStarted ?
+            {!isStarted &&
             <>
                 <label htmlFor="dropdown">Select Box Size: </label>
                 <select id="dropdown" value={n} onChange={(e)=>setN(e.target.value)}>
@@ -134,9 +131,8 @@ const Board = (props) => {
                     <option value={40}>40</option>
                 </select>
             </>
-            :
-            <div>Score: {score}</div>
             }
+            <h2>Score: {score}</h2>
             <div className="board">
                 {list}
             </div>
